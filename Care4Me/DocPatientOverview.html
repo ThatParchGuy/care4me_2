@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Sample Care4Me</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="playstyle.css">
+</head>
+<body id="container">
+
+<div class="container-fluid">
+  <img src="images/2.png">
+  <div class="row"  id="content">
+    <div class="col-sm-2 padding-0">
+		<ul class="nav nav-pills nav-stacked">
+			<li><a href="DocHome.html">Home</a></li>
+			<li><a href="DocNotes.html">Notes</a></li>
+			<li><a href="#">Menu 2</a></li>
+			<li><a href="#">Menu 3</a></li>
+		</ul>
+		<p>Still need to make the entirety of the website more responsive to iPads and Phones.  Possible orientation lock?</p>
+	</div>
+    <div class="col-sm-10 padding-0">
+	
+		<h1 id="redFont">Test Patient</h1>
+		<h3 id="redFont">Female</h3>
+		<h3 id="redFont">Age 83</h3
+		>
+		<!-- Tab links -->
+			<div class="tab">
+			  <button class="tablinks" onclick="openData(event, 'Vitals')">Vitals</button>
+			  <button class="tablinks" onclick="openData(event, 'Exercise')">Exercise</button>
+			  <button class="tablinks" onclick="openData(event, 'Medication')">Medication</button>
+			</div>
+
+			<!-- Tab content -->
+			<div id="Vitals" class="tabcontent">
+				<div id="whiteText">
+				  <h3>Blood Pressure or something</h3>
+				  <img src="images/line_graph.png">
+				</div>
+			</div>
+
+			<div id="Exercise" class="tabcontent">
+				<div id="whiteText">
+				  <h3>Exercise</h3>
+				  <p>Hours exercised?</p>
+				  <p>I have no idea how to represent the ADLs here</p>
+				</div>
+			</div>
+
+			<div id="Medication" class="tabcontent">
+				<div id="whiteText">
+				  <h3>Records</h3>
+				  <p>Missed Pill A on Monday</p>
+				  <p>Missed Pill C on Tuesday</p>
+			    </div>
+			</div>
+			
+			<script>
+				function openData(evt, dataName) {
+				  // Declare all variables
+				  var i, tabcontent, tablinks;
+
+				  // Get all elements with class="tabcontent" and hide them
+				  tabcontent = document.getElementsByClassName("tabcontent");
+				  for (i = 0; i < tabcontent.length; i++) {
+					tabcontent[i].style.display = "none";
+				  }
+
+				  // Get all elements with class="tablinks" and remove the class "active"
+				  tablinks = document.getElementsByClassName("tablinks");
+				  for (i = 0; i < tablinks.length; i++) {
+					tablinks[i].className = tablinks[i].className.replace(" active", "");
+				  }
+
+				  // Show the current tab, and add an "active" class to the button that opened the tab
+				  document.getElementById(dataName).style.display = "block";
+				  evt.currentTarget.className += " active";
+				}
+			</script>
+	</div>
+  </div>
+</div>
+    
+</body>
+</html>

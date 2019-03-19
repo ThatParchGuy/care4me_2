@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Sample Care4Me</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="playstyle.css">
+</head>
+<body id="container">
+
+<div class="container-fluid">
+  <img src="images/2.png">
+  <div class="row"  id="content">
+    <div class="col-sm-2 padding-0">
+		<ul class="nav nav-pills nav-stacked">
+			<li><a href="PatientHome.html">Home</a></li>
+			<li><a href="notes.html">Notes</a></li>
+			<li><a href="#">Menu 2</a></li>
+			<li><a href="#">Menu 3</a></li>
+		</ul>
+		<p>Still need to make the entirety of the website more responsive to iPads and Phones.  Possible orientation lock?</p>
+	</div>
+    <div class="col-sm-10 padding-0" class="form-group" id="formBack">
+			<!-- The grid: three columns -->
+			<div class="column">
+			  <div class="row" id="headSection" onclick="openTab('b1');" style="background:red;">Vitals</div>
+				  <div id="b1" class="containerTab" style="display:none;background:gray">
+				  <!-- If you want the ability to close the container, add a close button -->
+				  <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
+				  <h2>Input</h2>
+				  <form>
+				  1.  What is your blood pressure? (Could use a slider here)<br>
+					<input type="text" name="sampleTextbox"><br>
+				  2.  Current weight: <input type="text" name="sampleTextbox"><br>
+				  
+					All these need to be determined by a doctor before hand
+				  </form>
+				</div>
+				
+			  <div class="row" id="headSection" onclick="openTab('b2');" style="background:red;">Exercise</div>
+				  <div id="b2" class="containerTab" style="display:none;background:gray">
+				  <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
+				  <h2>Questions</h2>
+					<form>
+					1.   Did you walk a mile today?
+						<input type="radio" name="minActive" value="yes"> Yes
+						<input type="radio" name="minActive" value="no">No<br>
+					2.   Did you go leave the house?
+						<input type="radio" name="minActive" value="yes"> Yes
+						<input type="radio" name="minActive" value="no">No<br>
+					3.   How many minutes were you active?
+							<input type="radio" name="minActive" value="yes"> Yes
+							<input type="radio" name="minActive" value="no">No<br>
+					4.   Did you lift any heavier objects?
+							<input type="radio" name="liftObj" value="yes"> Yes
+							<input type="radio" name="liftObj" value="no">No<br>
+					More questions would be asked
+					</form>
+				</div>
+				
+			  <div class="row" id="headSection" onclick="openTab('b3');" style="background:red;">Medication</div>
+				  <div id="b3" class="containerTab" style="display:none;background:gray">
+				  <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
+				  <h2>Questions</h2>
+				  <form>
+					1.  Did you take medication A today?<br>
+							<input type="radio" name="medication" value="yes"> Yes
+							<input type="radio" name="medication" value="no">No<br>
+					2.  Did you take medication B today?<br>
+							<input type="radio" name="medication" value="yes"> Yes
+							<input type="radio" name="medication" value="no">No<br>
+					3.  Did you take medication C today?<br>
+							<input type="radio" name="medication" value="yes"> Yes
+							<input type="radio" name="medication" value="no">No<br>
+					This section would contain more questions about Medication
+				  </form>
+				  
+				</div>
+			</div>
+	</div>
+  </div>
+</div>
+    <script>
+		// Hide all elements with class="containerTab", except for the one that matches the clickable grid column
+		function openTab(tabName) {
+		  var i, x;
+		  x = document.getElementsByClassName("containerTab");
+		  //for (i = 0; i < x.length; i++) {
+			//x[i].style.display = "none";
+		  //} 
+		  document.getElementById(tabName).style.display = "block";
+		}
+	</script>
+</body>
+</html>
